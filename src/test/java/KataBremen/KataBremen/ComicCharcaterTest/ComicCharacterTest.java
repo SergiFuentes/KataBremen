@@ -1,9 +1,8 @@
 package KataBremen.KataBremen.ComicCharcaterTest;
-
-import KataBremen.KataBremen.Animal.Animal;
 import KataBremen.KataBremen.Animal.Cat;
 import KataBremen.KataBremen.Animal.Donkey;
 import KataBremen.KataBremen.ComicCharcater.ComicCharacter;
+import KataBremen.KataBremen.Director.Director;
 import KataBremen.KataBremen.ISingers;
 import org.junit.jupiter.api.Test;
 
@@ -27,5 +26,38 @@ public class ComicCharacterTest {
         assertThat(("The cat Garfield isn't singing"), equalTo(chorus.get(0).message()));
         assertThat(("The donkey Mariano isn't singing"), equalTo(chorus.get(1).message()));
         assertThat((null), equalTo(chorus.get(2).message()));
+    }
+    @Test
+    void directorCanOrderToStartSingingChorusYet(){
+        Director director = new Director(chorus);
+        Cat cat = new Cat("Garfield", "miau");
+        Donkey donkey = new Donkey("Mariano", "ooooiooooi");
+        ComicCharacter superMan = new ComicCharacter();
+        this.chorus.add(cat);
+        this.chorus.add(donkey);
+        this.chorus.add(superMan);
+
+        director.orderStartSingChorus();
+
+        assertThat(cat.isSinging(), equalTo(true));
+        assertThat(donkey.isSinging(), equalTo(true));
+        assertThat(superMan.isSinging(), equalTo(true));
+    }
+
+    @Test
+    void directorCanOrderToStopSingingChorusYet(){
+        Director director = new Director(chorus);
+        Cat cat = new Cat("Garfield", "miau");
+        Donkey donkey = new Donkey("Mariano", "ooooiooooi");
+        ComicCharacter superMan = new ComicCharacter();
+        this.chorus.add(cat);
+        this.chorus.add(donkey);
+        this.chorus.add(superMan);
+
+        director.orderStartSingChorus();
+        director.orderStopSingChorus();
+        assertThat(cat.isSinging(), equalTo(false));
+        assertThat(donkey.isSinging(), equalTo(false));
+        assertThat(superMan.isSinging(), equalTo(false));
     }
 }

@@ -9,16 +9,16 @@ public class ComicCharacter implements ISingers {
         return isSinging;
     }
 
-    @Override
-    public String message() {
-        return null;
-    }
-
     public boolean startSinging() {
         return this.isSinging = true;
     }
 
     public boolean stopSinging() {
         return this.isSinging = false;
+    }
+
+    @Override
+    public String message() {
+        return null;
     }
 }

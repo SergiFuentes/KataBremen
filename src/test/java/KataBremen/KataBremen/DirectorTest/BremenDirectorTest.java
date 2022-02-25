@@ -1,5 +1,4 @@
 package KataBremen.KataBremen.DirectorTest;
-import KataBremen.KataBremen.Animal.Animal;
 import KataBremen.KataBremen.Animal.Cat;
 import KataBremen.KataBremen.Animal.Donkey;
 import KataBremen.KataBremen.Director.Director;

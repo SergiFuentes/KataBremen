@@ -5,5 +5,4 @@ public interface ISingers {
     boolean stopSinging();
     boolean isSinging();
     String message();
-
 }
