@@ -1,6 +1,8 @@
 package KataBremen.KataBremen.Animal;
 
-public abstract class Animal {
+import KataBremen.KataBremen.ISingers;
+
+public abstract class Animal implements ISingers {
     protected String name;
     protected String sound;
     protected boolean isSinging = false;

@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BremenCatTest {
+public class BremenAnimalTest {
     @Test
     void canCreateAnAnimal(){
         Cat cat = new Cat("cat", "miau");
